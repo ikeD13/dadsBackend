@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const bodyParser = require('body-parser')
-
+const dotenv = require("dotenv").config()
 const environment = process.env.port || 'development'
 const config = require('./knexfile.js')[environment]
 const knex = require('knex')(config)
@@ -77,6 +77,6 @@ app.use((req, res, next) => {
   res.status(500).send('Something broke!')
 })
 
-//app.listen(port, () => {
-//  console.log('Servers is running on port:', port)
-//})
+app.listen(port, () => {
+ console.log('Servers is running on port:', port)
+})
