@@ -8,7 +8,7 @@ const config = require('./knexfile.js')[environment]
 const knex = require('knex')(config)
 const port = process.env.port
 
-require('dotenv').config()
+
 app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -77,6 +77,6 @@ app.use((req, res, next) => {
   res.status(500).send('Something broke!')
 })
 
-app.listen(port, () => {
-  console.log('Servers is running on port:', port)
-})
+//app.listen(port, () => {
+//  console.log('Servers is running on port:', port)
+//})
