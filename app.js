@@ -8,7 +8,7 @@ const config = require('./knexfile.js')[environment]
 const knex = require('knex')(config)
 const port = process.env.port
 
-
+require('dotenv').config()
 app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: false}))
